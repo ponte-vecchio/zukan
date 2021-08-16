@@ -1,0 +1,228 @@
+\documentclass[10 pt]{report}
+\usepackage[total={5.9in, 8.7in}]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[scaled=0.9]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[defaultmono]{droidsansmono}
+\usepackage{CJKutf8}
+\usepackage{pxrubrica}
+\usepackage{kotex}
+\usepackage{dhucs-trivcj}
+\usepackage{multirow}
+\usepackage{multicol}
+\setlength{\columnsep}{0.5cm}
+\usepackage{colortbl} % add colour to tables
+\usepackage{tabularx} % superior tabular
+\usepackage{imakeidx}
+\usepackage{hyperref}
+\hypersetup{%
+    colorlinks = true,
+    linkcolor = ocean,
+    filecolor = aqua,
+    urlcolor = aqua,
+    pdfpagemode = FullScreen
+}%
+
+% Custom LGBT Colours
+\usepackage{xcolor}  % Add some colour to life
+% L
+\definecolor{lavender}{HTML}{D783FF} % lavender
+\definecolor{bubblegum}{HTML}{FF85FF} % bubblegum
+\definecolor{carnation}{HTML}{FF8AD8} % carnation
+\definecolor{salmon}{HTML}{FF7E79} % salmon
+\definecolor{maraschino}{HTML}{FF2600} % maraschino
+\definecolor{cayenne}{HTML}{941100} % cayenne
+\definecolor{mocha}{HTML}{945200} % mocha
+\definecolor{tangerine}{HTML}{FF9300} % tangerine
+\definecolor{cantaloupe}{HTML}{FFD479} % cantaloupe
+\definecolor{plum}{HTML}{942193} % plum
+\definecolor{maroon}{HTML}{941751} % maroon
+
+% G
+\definecolor{asparagus}{HTML}{929000} % asparagus
+\definecolor{fern}{HTML}{4F8F00} % fern
+\definecolor{teal}{HTML}{009193} % teal
+\definecolor{flora}{HTML}{73FA79} % flora
+\definecolor{honeydew}{HTML}{D4FB79} % honeydew
+\definecolor{seafoam}{HTML}{00FA92} % seafoam
+
+% B
+\definecolor{turquoise}{HTML}{00FDFF} % turquoise
+\definecolor{ocean}{HTML}{005493} % ocean
+\definecolor{midnight}{HTML}{011993} % midnight
+\definecolor{eggplant}{HTML}{531B93} % eggplant
+
+\definecolor{aqua}{HTML}{0096FF} % aqua
+\definecolor{blueberry}{HTML}{0433FF} % blueberry
+\definecolor{spindrift}{HTML}{73FCD6} % spindrift
+\definecolor{orchid}{HTML}{7A81FF} % orchid
+
+% Nord - https://www.nordtheme.com/docs/colors-and-palettes
+\definecolor{night1}{HTML}{2E3440} % nord0
+\definecolor{night2}{HTML}{3B4252} % nord1
+\definecolor{night3}{HTML}{434C5E} % nord2
+\definecolor{night4}{HTML}{4C556A} % nord3
+% no snowstorm (nord4~nord6)
+\definecolor{frost1}{HTML}{8FBCBB} % nord7
+\definecolor{frost2}{HTML}{88C0D0} % nord8
+\definecolor{frost3}{HTML}{81A1C1} % nord9
+\definecolor{frost4}{HTML}{5E81AC} % nord10
+\definecolor{aurorablue}{HTML}{5E81AC} % nord10
+\definecolor{aurorared}{HTML}{BF616A} % nord11
+\definecolor{auroraorange}{HTML}{D08770} % nord12
+\definecolor{aurorayellow}{HTML}{EBCB8B} % nord13
+\definecolor{auroragreen}{HTML}{A3BE8C} % nord14
+\definecolor{aurorapurple}{HTML}{B48EAD} %n nord15
+
+%---- Macros ----
+\newcommand{\furi}[2][j]{\ruby[#1]{#2}}
+\newcommand{\jpxm}[1]{\begin{CJK}{UTF8}{ipxm}#1\end{CJK}}
+\newcommand{\jpxg}[1]{\begin{CJK}{UTF8}{ipxg}#1\end{CJK}}
+\newcommand{\keyword}[1]{\textcolor{cayenne}{#1}}
+
+% Index building
+\makeindex[%
+    columns=1,
+    title=\Huge\jpxg{グロッサリー},
+    % options= -s style.ist
+]
+
+% Entry
+\newcommand{\jp}[3]{%
+    \begin{CJK}{UTF8}{ipxm}
+        \section*{\textcolor{night4}{#1}\index{#2} (#2)}%
+    \end{CJK}
+
+    \noindent\textcolor{ocean}{\rm\small{#3}}\vspace{2em}
+    }
+\newcommand{\eg}[2]{%
+    \begin{CJK}{UTF8}{ipxm}%
+        \noindent例) #1%
+    \end{CJK}
+
+    \noindent\hspace{1.6em}\textrm{#2}\vspace{1.3em}
+    }
+\newcommand{\egfinal}[2]{%
+    \begin{CJK}{UTF8}{ipxm}%
+        \noindent例) #1%
+    \end{CJK}
+
+    \noindent\hspace{1.6em}\textrm{#2}\vspace{1.35em}
+    \hrule\vspace{1.35em}
+    }
+
+% \newcommand{\idx}[1]{\index{\jp{#1}}}
+
+%---- Basic Title Info ----
+\title{\Huge\jpxm{聞いていた単語\\そのコレクション}}
+\author{\sfレオザライオン}
+\date{}
+
+%---- Main Document ----
+\begin{document}
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+
+\chapter{\jpxm{その\furi{口}{くち}}}
+\begin{multicols*}{2}
+\jp{口が重い}{くちがおもい}{입이 무겁다, 과묵하다}
+
+\egfinal{\furi{男}{おとこ}は\keyword{\furi{口}{くち}が\furi{重}{おも}く}なければならない}{사나이는 입이 무거워야 해.}
+
+\jp{口が上手い}{くちがうまい}{말을 잘 하다, 말 솜씨가 좋다}
+
+\egfinal{\keyword{\furi{口}{くち}が\furi{上|手}{う|ま}い}\furi{者}{しゃ}は\furi{嘘}{うそ}も\furi{上|手}{う|ま}い。}{말이 많은 자는 거짓말도 많다.}
+
+\jp{口が煩い}{くちがうるさい}{말이 많은, (평판이) 시끌하다}
+
+\eg{\furi{怠}{なま}け\furi{者}{もの}は、えてして\keyword{\furi{口}{くち}が\furi{煩}{うるさ}い}}{게으름뱅이는 대개 말이 많다}
+
+\egfinal{\furi{世|間}{せ|けん}(の\keyword{\furi{口}{くち}})\keyword{が\furi{煩}{うるさ}い}}{세상 소문이 성가시다}
+
+\jp{口が掛かる}{くちがかかる}{%
+    1. (손님, 친구의) 부름을 받다\\
+    2. (일의) 권유를 받다\\
+    3. 입에 오르다, 구설에 오르다
+}
+
+\eg{\furi{麻|雀}{マー|ジャン}の\keyword{\furi{口}{くち}が\furi{掛}{か}かる}}{마작을 하자고 (친구가) 부르다}
+
+\eg{\furi{昨日}{きのう}\furi{就|職}{しゅう|しょく}の\keyword{\furi{口}{くち}が\furi{掛}{か}かった。}}{어제 취직 권유를 받았어.}
+
+\egfinal{\furi{彼}{かれ}の\keyword{\furi{口}{くち}に\furi{掛}{か}か}ってはどうにもならない。}{그의 입에 오르면 어쩔 도리가 없어.}
+
+\jp{口が軽い}{くちがかるい}{(입, 주둥이가) 가볍다, 싸다, 헤프다}
+
+\egfinal{\keyword{\furi{口}{くち}の\furi{軽}{かる}い}のが\furi{欠|点}{けっ|てん}[\furi{問|題}{もん|だい}]だ。}{입이 싸서 탈이다.}
+
+\jp{口が過ぎる}{くちがすぎる}{(말이) 과하다, 지나치다, 건방지다}
+
+\egfinal{\furi{年長者}{ねんちょうしゃ}に\furi{向}{む}かって\furi{少}{すこ}し\furi{口}{くち}が\furi{過}{す}ぎるぞ。}{어른한테 말이 좀 과한거 아냐?}
+
+\jp{口当(た)り}{くちあたり}{%
+    1. 입맛, 입에 닫는 느낌, 구미(口味)\\
+    2. 응대(應對)
+    }
+
+\eg{\keyword{\furi{口}{くち}\furi{当}{あた}り}のいい\furi{酒}{さけ}}{입에 착 맞는 술 (=입에 당기는 술)}
+
+\egfinal{\keyword{\furi{口}{くち}\furi{当}{あた}り}のいい[\furi{柔}{やわ}らかい]\furi{人}{ひと}}{응대를 잘 하는 사람}
+
+
+\jp{口に会う}{くちにあう}{입(맛)에 맞는}
+
+\egfinal{%
+    \keyword{\furi{口}{くち}に\furi{合}{あ}う}\furi{和|食}{わ|しょく}が\furi{最|高}{さい|こう}。
+    }{입에 맞는 일식(日食)이 최고.}
+
+\jp{口にする}{くちにする}{%
+    1. 입에 담는, 말하는\\
+    2. 먹는, 입에 대는}
+
+\eg{%
+    ひょいひょいと\furi{冗|談}{じょう|だん}を\keyword{\furi{口}{くち}にする}
+    }{이따금 농담을 하다}
+
+\egfinal{%
+    \furi{酒}{さけ}は\keyword{\furi{口}{くち}にしない}。
+    }{술은 입에 대지 않아. (= 술 안 마셔.)}
+
+\jp{口に出す}{くちにだす}{입밖에 내는, 말을 꺼내는}
+
+\egfinal{\keyword{\furi{口}{くち}に\furi{出}{だ}す}べきことではない。
+    }{입 밖에 낼 일이 아니야.}
+
+\end{multicols*}
+\pagebreak
+
+\chapter{\jpxm{その手}}
+\pagebreak
+
+\chapter{\jpxm{その取り}}
+\jp{草取り}{くさとり}{풀뽑기, 잡초 뽑기}
+
+\eg{
+    \furi{父}{ちち}は\furi{私}{わたし}に\furi{庭}{にわ}の\keyword{\furi{草}{くさ}\furi{取}{と}り}をやらせた。
+    }{
+    아빠는 나한테 풀뽑기를 하라고 했다.
+    }
+\pagebreak
+
+\chapter{}
+\jp{受け止める}{うけとめる}{%
+    받아내는, 받아들이는, 막아내는
+    }
+
+\eg{\furi{忠|告}{ちゅう|こく}を\furi{謙|虚}{けん|きょ}に\furi{受}{う}け\furi{止}{と}める}{충고를 겸허히 받아들이다}
+
+\pagebreak
+\printindex
+\end{document}
+
+% \jp{}{}{%
+%     }{%
+%     }{%
+%     }
